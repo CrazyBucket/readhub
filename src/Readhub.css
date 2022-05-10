@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: .02em;
+}
+.logo {
+    cursor: pointer;
+    padding-top: 8px;
+    float: left;
+    margin-right: 30px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.nav {
+    height: 60px;
+    border: 1px solid rgb(241, 241, 241);
+    font-family:'PingFang SC';
+    color: #737373;
+}
+.header {
+    line-height: 60px;
+    margin: 0 40px 0 0;
+    float: left;
+    text-decoration: none;
+}
+.hot {
+    color: #246394; 
+    font-weight: 700;
+}
+.header:link {
+    color: #737373;
+}
+.header:visited {
+    color: #246394;
+}
+.header:hover {
+    color: rgb(80, 130, 169);
+    font-weight: 700;
+}
+.hot:hover {
+    color: rgb(80, 130, 169);
+    font-weight: 700;
+}
+.container {
+    height: 60px;
+    width: 960px;
+    margin: 0 auto;
+    text-decoration: none;
+    position: relative;
+}
+.right1 {
+    position: relative;
+}
+.searchImg {
+    background-image: url("https://cdn.readhub.cn/next_images/icons-d38bc976c73cdfe0268c17d76d4f52f3.png");
+    background-position: -80px -458px;
+    width: 38px;
+    height: 37px;
+    transform: scale(.5);
+    top: 12px;
+    position: absolute;
+    cursor: pointer;
+    right: 80px;
+}
+.login {
+    position: absolute;
+    right: 0;
+    line-height: 60px;
+}
+.login:hover {
+    color: rgb(152, 152, 152);
+}
+a:visited {
+    color: #737373;
+}
+.box {
+    width: 960px;
+    height: 1000px;
+    margin: 38px auto;
+    min-height: calc(100vh - 219px);
+    font-family:'PingFang SC';
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: normal ;
+    justify-content: normal;
+    align-items: normal; 
+    margin-top: 0;
+}
+.right2 {
+    margin-top: 30px;
+    display: flex;
+    width: 330px;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+.sponsor {
+    color: #AFAFAF;
+    margin: 0 0 10px;
+    font-size: 16px;
+    width: 300px;
+    height: 28.6px;
+    position: absolute;
+    right: 0;
+}
+.adBox {
+    height: 450px;
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 28.6px;
+}
+.ad1 {
+    width: 140px;
+    height: 78px;
+    margin: 0 12px 12px 0;
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    border: rgb(238, 238, 238) solid 1px;
+    text-align: center;
+    box-sizing:inherit;
+    cursor: pointer;
+}
+.ad2 {
+    width: 140px;
+    height: 78px;
+    margin: 0 0 12px;
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    border: rgb(238, 238, 238) solid 1px;
+    text-align: center;
+    box-sizing:inherit;
+    cursor: pointer;
+}
+.ad1:hover {
+    content: "";
+    filter: blur(0.6px);
+    z-index: 5;
+    box-shadow: 0px 20px 350px rgba(0, 0, 0, 0.1), 0px 8px 100px rgba(0, 0, 0, 0.05), 0px 3px 40px rgba(0, 0, 0, 0.04);;
+}
+.ad2:hover {
+    content: "";
+    filter: blur(0.6px);
+    z-index: 5;
+    box-shadow: 0px 20px 350px rgba(0, 0, 0, 0.1), 0px 8px 100px rgba(0, 0, 0, 0.05), 0px 3px 40px rgba(0, 0, 0, 0.04);;
+}
+.adImg {
+    width:121px;
+    height:75px;
+    margin-top: 1px;
+}
+.adImg2 {
+    width: 90px;
+}
+.ad3 {
+    align-items: center;
+    padding: 16px;
+    color: #AFAFAF;
+    display: flex;
+    font-size: 14px;
+    border: rgb(238, 238, 238) solid 1px;
+}
+.adText {
+    padding-left: 25px;
+}
+.text {
+    letter-spacing: .02em;
+    padding: 30px 0 30px;
+    border-bottom: rgb(238, 238, 238) solid 1px;
+    cursor: pointer;
+    width: 630px;
+}
+
+.title:visited {
+    color: #999;
+}
+.title:hover {
+    text-decoration: underline;
+    color: rgb(80, 130, 169);
+}
+.title {
+    font-size: 17px;
+    color: rgb(51, 51, 51);
+    display: inline-block;
+    line-height: 1.78em;
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: 500;
+}
+.time {
+    display: inline-block;
+    font-size: 14px;
+    color:#999;
+    font-weight: 400;
+    line-height: 1;
+}
+.content {
+    margin-top: 14px;
+    color: #737373;
+    font-size: 15px;
+    line-height: 28px;
+    
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical
+}
+.content:hover {
+    color: rgb(51, 51, 51);
+}
+.head {
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    letter-spacing: .02em;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.title a {
+    padding-right: 15px;
+}
+
