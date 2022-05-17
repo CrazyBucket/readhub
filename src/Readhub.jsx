@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Readhub.css';
 import img1 from './logo.png'
 import dayjs from 'dayjs/esm/index.js'
-
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { createRoot } from 'react-dom/client';
 const container = document.getElementById('root');
@@ -13,6 +13,7 @@ const root = createRoot(container);
 export default function Readhub() {
     dayjs().format()
     const [list, setList] = useState([]);
+
     useEffect(() => {
         axios.get("/api")
             .then(res => {
@@ -23,19 +24,39 @@ export default function Readhub() {
                 console.log(error);
             });
     }, [])
-    console.log(list[0]);
+    //"/api?lastCursor=433586&pageSize=10"
+    useEffect(() => {
+        requestList();
+    }, [])
     function calculate(timestamp) {
-        var mistiming = Math.round(new Date() / 1000)-timestamp;
+        var mistiming = Math.round(new Date() / 1000) - timestamp;
         mistiming = Math.abs(mistiming)
-        var arrr = ['年','个月','星期','天','小时','分钟','秒'];
-        var arrn = [31536000,2592000,604800,86400,3600,60,1];
-        for(var i=0; i<7; i++){
-            var inm = Math.floor(mistiming/arrn[i])
-            if(inm!=0){
-                return inm+arrr[i] + '前'
+        var arrr = ['年', '个月', '星期', '天', '小时', '分钟', '秒'];
+        var arrn = [31536000, 2592000, 604800, 86400, 3600, 60, 1];
+        for (var i = 0; i < 7; i++) {
+            var inm = Math.floor(mistiming / arrn[i])
+            if (inm != 0) {
+                return inm + arrr[i] + '前'
             }
         }
+
     }
+    const requestList = () => {
+        setTimeout(async () => {
+            console.log("接收新的数据")
+            // var url = '"/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10"';
+            // console.log(url)
+            // axios.get(url)
+            axios.get("/api?lastCursor=433586&pageSize=10")
+                .then(res => {
+                    console.log(res.data.data)
+                    setList(list.concat(res.list))
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },1000);
+    };
     return (
         <div>
             <div className="nav">
@@ -77,20 +98,32 @@ export default function Readhub() {
                         </div>
                     </div>
                 </div>
-                <div className="left2">
-                    {
-                        list.map((item) =>
-                            <div key={item.id} className="text"> 
-                                <div className="head">
-                                    <div className="title"><a>{item.title}</a><span className="time">{calculate(dayjs(item.createdAt).unix())}</span></div>
+
+                <div className="left2" >
+                    <InfiniteScroll
+                        className="roll"
+                        dataLength={list.length}
+                        next={requestList}
+                        hasMore={true}
+                        endMessage={
+                            <h1>End</h1>
+                        }
+                        loader={<h4>Loading...</h4>}
+                    >
+                        {
+                            list.map((item) =>
+                                <div key={item.id} className="text" >
+                                    <div className="head">
+                                        <div className="title"><a>{item.title}</a><span className="time">{calculate(dayjs(item.createdAt).unix())}</span></div>
+                                    </div>
+                                    <div className="content">{item.summary}</div>
                                 </div>
-                                <div className="content">{item.summary}</div>
-                            </div>
-                        )
-                    }
+                            )
+                        }
+                    </InfiniteScroll>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 
 

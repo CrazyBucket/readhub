@@ -233,4 +233,6 @@ a:visited {
 .title a {
     padding-right: 15px;
 }
-
+.roll {
+    position: absolute;
+}
