@@ -236,3 +236,8 @@ a:visited {
 .roll {
     position: absolute;
 }
+.load {
+    text-align: center;
+    color: #246394;
+    padding: 20px;
+}

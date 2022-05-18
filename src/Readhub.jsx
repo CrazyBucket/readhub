@@ -9,7 +9,6 @@ import { createRoot } from 'react-dom/client';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-
 export default function Readhub() {
     dayjs().format()
     const [list, setList] = useState([]);
@@ -24,7 +23,6 @@ export default function Readhub() {
                 console.log(error);
             });
     }, [])
-    //"/api?lastCursor=433586&pageSize=10"
     useEffect(() => {
         requestList();
     }, [])
@@ -39,18 +37,15 @@ export default function Readhub() {
                 return inm + arrr[i] + '前'
             }
         }
-
     }
     const requestList = () => {
         setTimeout(async () => {
             console.log("接收新的数据")
-            // var url = '"/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10"';
-            // console.log(url)
-            // axios.get(url)
-            axios.get("/api?lastCursor=433586&pageSize=10")
+            var url = '/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
+            axios.get(url)
                 .then(res => {
                     console.log(res.data.data)
-                    setList(list.concat(res.list))
+                    setList(list.concat(res.data.data))
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -106,9 +101,9 @@ export default function Readhub() {
                         next={requestList}
                         hasMore={true}
                         endMessage={
-                            <h1>End</h1>
+                            <h2 className="load">End</h2>
                         }
-                        loader={<h4>Loading...</h4>}
+                        loader={<div className="load">Loading...</div>}
                     >
                         {
                             list.map((item) =>
