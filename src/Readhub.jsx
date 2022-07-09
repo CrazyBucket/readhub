@@ -4,13 +4,14 @@ import './Readhub.css';
 import img1 from './logo.png'
 import dayjs from 'dayjs/esm/index.js'
 import InfiniteScroll from 'react-infinite-scroll-component';
-
 import { createRoot } from 'react-dom/client';
+import classnames  from 'classnames';
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 export default function Readhub() {
-    dayjs().format()
+    dayjs().format();
     const [list, setList] = useState([]);
     useEffect(() => {
         axios.get("/api")
@@ -29,10 +30,10 @@ export default function Readhub() {
         if (timestamp === 0 || timestamp == null) {
             return ''
         } else {
-            var date = new Date(timestamp * 1000)
-            var Y = date.getFullYear() + '-'
-            var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
-            var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+            let date = new Date(timestamp * 1000)
+            let Y = date.getFullYear() + '-'
+            let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
+            let D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
             return Y + M + D
         }
     }
@@ -40,16 +41,16 @@ export default function Readhub() {
         if (timestamp === 0 || timestamp == null) {
             return ''
         } else {
-            var date = new Date(timestamp * 1000)
-            var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
-            var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+            let date = new Date(timestamp * 1000)
+            let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
+            let D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
             return M + D
         }
     }
     function calculate(timestamp) {
         let mistiming = Math.round(new Date() / 1000) - timestamp;
         mistiming = Math.abs(mistiming)
-        let arrn = [31536000, 259200,172800, 86400, 3600, 60, 1];
+        let arrn = [31536000, 259200, 172800, 86400, 3600, 60, 1];
         let t1 = Math.floor(mistiming / arrn[0])
         if (t1 != 0) {
             return overYear(timestamp)
@@ -81,7 +82,6 @@ export default function Readhub() {
     }
     const requestList = () => {
         setTimeout(async () => {
-            console.log("接收新的数据")
             let url = '/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
             axios.get(url)
                 .then(res => {
@@ -124,7 +124,6 @@ export default function Readhub() {
                         <div className="ad2"><img src="https://resource.nocode.com/upload/20210402/62052206-9d08-42ca-b647-0f89f8cf8f5c" alt="error" className="adImg" /></div>
                         <div className="ad1"><img src="https://resource.nocode.com/upload/20210402/9c1db9ae-dc07-4c2f-b858-902fc0a8c885" alt="error" className="adImg" /></div>
                         <div className="ad2"><img src="https://resource.nocode.com/upload/20210402/6f4c3437-5efb-451f-947c-329ed73a6426" alt="error" className="adImg" /></div>
-                        <div className="ad1"><img src="https://resource.nocode.com/upload/20210402/675b7a33-f221-459e-839f-f1e3e627ee4b" alt="error" className="adImg" /></div>
                         <div className="ad3">
                             <img src="https://cdn.readhub.cn/next_images/minaCodeFromTopicsScan@2x.png" alt="error" className="adImg2" />
                             <div className="adText">
@@ -148,11 +147,33 @@ export default function Readhub() {
                     >
                         {
                             list.map((item) =>
-                                <div key={item.id} className="text" >
+                                <div
+                                    key={item.id}
+                                    className={item.hasInstantView === true ? "fold" : "unfold"}
+                                    onClick={() => {
+                                        item.hasInstantView = false;
+                                        console.log(item.hasInstantView)
+                                    }}
+                                >
                                     <div className="head">
-                                        <div className="title"><a>{item.title}</a><span className="time">{calculate(dayjs(item.createdAt).unix())}</span></div>
+                                        <div className="title">
+                                            <a>{item.title}</a>
+                                        <span className="time">{calculate(dayjs(item.createdAt).unix())}</span>
+                                        </div>
                                     </div>
                                     <div className="content">{item.summary}</div>
+                                    <ul>
+                                        {
+                                            item.newsArray.map((item1) =>
+                                                <li
+                                                    key={item1.id}
+                                                    className="news"
+                                                >
+                                                    {item1.title}
+                                                </li>
+                                            )
+                                        }
+                                    </ul>
                                 </div>
                             )
                         }

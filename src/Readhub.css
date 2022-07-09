@@ -173,14 +173,23 @@ a:visited {
 .adText {
     padding-left: 25px;
 }
-.text {
+.fold {
     letter-spacing: .02em;
     padding: 30px 0 30px;
     border-bottom: rgb(238, 238, 238) solid 1px;
     cursor: pointer;
     width: 630px;
 }
-
+.unfold {
+    letter-spacing: .02em;
+    padding: 30px 0 30px;
+    border-bottom: rgb(238, 238, 238) solid 1px;
+    cursor: pointer;
+    width: 630px;
+    border: 1px solid #d4d6d8;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px -4px rgb(0 0 0 / 10%);
+}
 .title:visited {
     color: #999;
 }
@@ -209,7 +218,6 @@ a:visited {
     color: #737373;
     font-size: 15px;
     line-height: 28px;
-    
     display: -webkit-box;
     overflow: hidden;
     white-space: normal !important;
@@ -217,6 +225,10 @@ a:visited {
     word-wrap:break-word;
     -webkit-line-clamp:3;
     -webkit-box-orient: vertical
+}
+.content::selection {
+    background-color: rgb(64, 109, 145);
+    color: white;
 }
 .content:hover {
     color: rgb(51, 51, 51);
