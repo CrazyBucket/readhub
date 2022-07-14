@@ -5,7 +5,7 @@ import img1 from './logo.png'
 import dayjs from 'dayjs/esm/index.js'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { createRoot } from 'react-dom/client';
-import classnames  from 'classnames';
+import classnames from 'classnames';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -85,7 +85,7 @@ export default function Readhub() {
             let url = '/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
             axios.get(url)
                 .then(res => {
-                    console.log(res.data.data)
+                    // console.log(res.data.data)
                     setList(list.concat(res.data.data))
                 })
                 .catch(function (error) {
@@ -93,6 +93,11 @@ export default function Readhub() {
                 });
         }, 1000);
     };
+    const unFold = (id) => {
+        let newlist = [...list]
+        newlist[id].hasInstantView = !newlist[id].hasInstantView
+        setList(newlist)
+    }
     return (
         <div>
             <div className="nav">
@@ -113,6 +118,52 @@ export default function Readhub() {
                 </div>
             </div>
             <div className="box">
+
+
+                <div className="left2" >
+                    <InfiniteScroll
+                        className="roll"
+                        dataLength={list.length}
+                        next={requestList}
+                        hasMore={true}
+                        endMessage={
+                            <h2 className="load">End</h2>
+                        }
+                        loader={<div className="load">Loading...</div>}
+                    >
+                        {
+                            list.map((item, index) =>
+                                <div
+                                    key={item.id}
+                                    className={item.hasInstantView === true ? "fold" : "unfold"}
+                                    onClick={() => {
+                                        unFold(index)
+                                    }}
+                                >
+                                    <div className="head">
+                                        <div className="title">
+                                            <a>{item.title}</a>
+                                            <span className="time">{calculate(dayjs(item.createdAt).unix())}</span>
+                                        </div>
+                                    </div>
+                                    <div className={item.hasInstantView === true ? "content" : "unfoldContent"}>{item.summary}</div>
+                                    <ul>
+                                        {
+                                            item.newsArray.map((item1) =>
+                                                <li
+                                                    key={item1.id}
+                                                    className="news"
+                                                >
+                                                    {item1.title}
+                                                </li>
+                                            )
+                                        }
+                                    </ul>
+                                </div>
+                            )
+                        }
+                    </InfiniteScroll>
+                </div>
                 <div className="right2">
                     <div className="sponsor">年度赞助商</div>
                     <div className="adBox">
@@ -132,52 +183,6 @@ export default function Readhub() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="left2" >
-                    <InfiniteScroll
-                        className="roll"
-                        dataLength={list.length}
-                        next={requestList}
-                        hasMore={true}
-                        endMessage={
-                            <h2 className="load">End</h2>
-                        }
-                        loader={<div className="load">Loading...</div>}
-                    >
-                        {
-                            list.map((item) =>
-                                <div
-                                    key={item.id}
-                                    className={item.hasInstantView === true ? "fold" : "unfold"}
-                                    onClick={() => {
-                                        item.hasInstantView = false;
-                                        console.log(item.hasInstantView)
-                                    }}
-                                >
-                                    <div className="head">
-                                        <div className="title">
-                                            <a>{item.title}</a>
-                                        <span className="time">{calculate(dayjs(item.createdAt).unix())}</span>
-                                        </div>
-                                    </div>
-                                    <div className="content">{item.summary}</div>
-                                    <ul>
-                                        {
-                                            item.newsArray.map((item1) =>
-                                                <li
-                                                    key={item1.id}
-                                                    className="news"
-                                                >
-                                                    {item1.title}
-                                                </li>
-                                            )
-                                        }
-                                    </ul>
-                                </div>
-                            )
-                        }
-                    </InfiniteScroll>
                 </div>
             </div >
         </div >
