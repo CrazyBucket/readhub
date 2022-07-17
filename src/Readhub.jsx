@@ -124,8 +124,6 @@ export default function Readhub() {
                 </div>
             </div>
             <div className="box">
-
-
                 <div className="left2" >
                     <InfiniteScroll
                         className="roll"
@@ -135,7 +133,19 @@ export default function Readhub() {
                         endMessage={
                             <h2 className="load">End</h2>
                         }
-                        loader={<div className="load">Loading...</div>}
+                        loader={
+                            <div className="center">
+                                <div class="spinner">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+
+                        }
                     >
                         {
                             list.map((item, index) =>
