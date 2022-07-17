@@ -96,6 +96,12 @@ export default function Readhub() {
     const unFold = (id) => {
         let newlist = [...list]
         newlist[id].hasInstantView = !newlist[id].hasInstantView
+        for (let i = 0; i < list.length; i++) {
+            newlist[i].extra.instantView = true
+        }
+        if (!newlist[id].hasInstantView) {
+            newlist[id].extra.instantView = false
+        }
         setList(newlist)
     }
     return (
@@ -135,7 +141,11 @@ export default function Readhub() {
                             list.map((item, index) =>
                                 <div
                                     key={item.id}
-                                    className={item.hasInstantView === true ? "fold" : "unfold"}
+                                    className={classnames({
+                                        fold: item.hasInstantView,
+                                        unfold: !item.hasInstantView,
+                                        border: !item.extra.instantView
+                                    })}
                                     onClick={() => {
                                         unFold(index)
                                     }}
@@ -147,18 +157,27 @@ export default function Readhub() {
                                         </div>
                                     </div>
                                     <div className={item.hasInstantView === true ? "content" : "unfoldContent"}>{item.summary}</div>
-                                    <ul>
+                                    <ul className={item.hasInstantView === true ? "news" : "newsShow"}>
                                         {
                                             item.newsArray.map((item1) =>
                                                 <li
                                                     key={item1.id}
-                                                    className="news"
+                                                    className="newsArr"
                                                 >
-                                                    {item1.title}
+                                                    <a href="#" className="new">
+                                                        {item1.title}
+                                                    </a>
+                                                    <div className="from">
+                                                        {item1.siteName}
+                                                    </div>
                                                 </li>
                                             )
                                         }
                                     </ul>
+                                    <div className={item.hasInstantView === true ? "news" : "seeTopic"}>
+                                        <span>查看话题</span>
+                                        <div className="triangle"></div>
+                                    </div>
                                 </div>
                             )
                         }
