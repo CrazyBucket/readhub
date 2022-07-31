@@ -14,9 +14,17 @@ export default function Readhub() {
     dayjs().format();
     const [list, setList] = useState([]);
     useEffect(() => {
-        axios.get("/api")
+        axios({
+            method:'GET',
+            url:'/api',
+        })
             .then(res => {
-                setList(res.data.data)
+                let newlist = [...res.data.data]
+                for (let i = 0; i < newlist.length; i++) {
+                    newlist[i].isShow = true
+                    newlist[i].isBorder = true
+                }
+                setList(newlist)
                 console.log(res.data.data)
             })
             .catch(function (error) {
@@ -81,12 +89,17 @@ export default function Readhub() {
         }
     }
     const requestList = () => {
+        console.log(list)
         setTimeout(async () => {
             let url = '/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
             axios.get(url)
                 .then(res => {
-                    // console.log(res.data.data)
-                    setList(list.concat(res.data.data))
+                    let newlist = [...res.data.data]
+                    for (let i = 0; i < res.data.data.length; i++) {
+                        newlist[i].isShow = true
+                        newlist[i].isBorder = true
+                    }
+                    setList(list.concat(newlist))
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -95,12 +108,12 @@ export default function Readhub() {
     };
     const unFold = (id) => {
         let newlist = [...list]
-        newlist[id].hasInstantView = !newlist[id].hasInstantView
+        newlist[id].isShow = !newlist[id].isShow
         for (let i = 0; i < list.length; i++) {
-            newlist[i].extra.instantView = true
+            newlist[i].isBorder = true
         }
-        if (!newlist[id].hasInstantView) {
-            newlist[id].extra.instantView = false
+        if (!newlist[id].isShow) {
+            newlist[id].isBorder = false
         }
         setList(newlist)
     }
@@ -152,9 +165,9 @@ export default function Readhub() {
                                 <div
                                     key={item.id}
                                     className={classnames({
-                                        fold: item.hasInstantView,
-                                        unfold: !item.hasInstantView,
-                                        border: !item.extra.instantView
+                                        fold: item.isShow,
+                                        unfold: !item.isShow,
+                                        border: !item.isBorder
                                     })}
                                     onClick={() => {
                                         unFold(index)
@@ -166,8 +179,8 @@ export default function Readhub() {
                                             <span className="time">{calculate(dayjs(item.createdAt).unix())}</span>
                                         </div>
                                     </div>
-                                    <div className={item.hasInstantView === true ? "content" : "unfoldContent"}>{item.summary}</div>
-                                    <ul className={item.hasInstantView === true ? "news" : "newsShow"}>
+                                    <div className={item.isShow === true ? "content" : "unfoldContent"}>{item.summary}</div>
+                                    <ul className={item.isShow === true ? "news" : "newsShow"}>
                                         {
                                             item.newsArray.map((item1) =>
                                                 <li
@@ -184,7 +197,7 @@ export default function Readhub() {
                                             )
                                         }
                                     </ul>
-                                    <div className={item.hasInstantView === true ? "news" : "seeTopic"}>
+                                    <div className={item.isShow === true ? "news" : "seeTopic"}>
                                         <span>查看话题</span>
                                         <div className="triangle"></div>
                                     </div>
