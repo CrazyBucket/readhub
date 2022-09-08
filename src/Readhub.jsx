@@ -13,6 +13,7 @@ const root = createRoot(container);
 export default function Readhub() {
     dayjs().format();
     const [list, setList] = useState([]);
+    const [show,setShow] = useState(false)
     useEffect(() => {
         axios({
             method:'GET',
@@ -55,6 +56,7 @@ export default function Readhub() {
             return M + D
         }
     }
+    //通过时间戳来计算新闻发布时间为多久之前
     function calculate(timestamp) {
         let mistiming = Math.round(new Date() / 1000) - timestamp;
         mistiming = Math.abs(mistiming)
@@ -88,6 +90,17 @@ export default function Readhub() {
             return t7 + '秒前'
         }
     }
+    
+    //监听滚动距离来决定回到顶部按钮是否显示
+    window.onscroll = function scrollListen() {
+        var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+        if(scrollY>=1000){
+            setShow(true);
+        }else{
+            setShow(false);
+        }
+    }
+    //请求下一组数据
     const requestList = () => {
         console.log(list)
         setTimeout(async () => {
@@ -106,6 +119,7 @@ export default function Readhub() {
                 });
         }, 1000);
     };
+    //点击展开
     const unFold = (id) => {
         let newlist = [...list]
         newlist[id].isShow = !newlist[id].isShow
@@ -116,6 +130,17 @@ export default function Readhub() {
             newlist[id].isBorder = false
         }
         setList(newlist)
+    }
+    //点击返回顶部
+    function backTop() {
+        const rAF = window.requestAnimationFrame || (func => setTimeout(func, 16));
+        const frameFunc = () => {
+        if (document.documentElement.scrollTop > 0) {
+            document.documentElement.scrollTop -= 50;
+            rAF(frameFunc)
+            }
+        }
+        rAF(frameFunc)
     }
     return (
         <div>
@@ -138,6 +163,12 @@ export default function Readhub() {
             </div>
             <div className="box">
                 <div className="left2" >
+                    <div className={show?"backtop":""} onClick={() => {
+                        backTop()
+                    }}>
+                       <div className={show?"line":""}></div>
+                        <div className={show?"arrow":""}></div>
+                   </div>
                     <InfiniteScroll
                         className="roll"
                         dataLength={list.length}

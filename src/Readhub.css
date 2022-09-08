@@ -8,6 +8,10 @@
     background-color: rgb(64, 109, 145);
     color: white;
 }
+:root {
+    --content-max-width: 960px;
+    --layout-padding: calc(50vw - var(--content-max-width) / 2);
+}
 ul {
     list-style-type: none
 }
@@ -317,6 +321,38 @@ a:visited {
     width: 660px;
     height: 100vh;
     display: flex;
+}
+
+.backtop {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dddfe1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 4px;
+    right: calc(var(--layout-padding) + 180px);
+    bottom: 103px;
+    position: fixed;
+    cursor: pointer;
+}
+
+.line {
+    width: 12px;
+    height: 2px;
+    background: #dddfe1;
+    margin-bottom: 2px;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-color: transparent transparent #dddfe1;
+    border-style: solid;
+    border-width: 0 7px 10px;
 }
 
 .box {
