@@ -26,15 +26,12 @@ export default function Readhub() {
                     newlist[i].isBorder = true
                 }
                 setList(newlist)
-                console.log(res.data.data)
             })
             .catch(function (error) {
                 console.log(error);
             });
     }, [])
-    useEffect(() => {
-        requestList();
-    }, [])
+
     function overYear(timestamp) {
         if (timestamp === 0 || timestamp == null) {
             return ''
@@ -100,9 +97,11 @@ export default function Readhub() {
             setShow(false);
         }
     }
+    useEffect(() => {
+        requestList();
+    }, [])
     //请求下一组数据
     const requestList = () => {
-        console.log(list)
         setTimeout(async () => {
             let url = '/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
             axios.get(url)
@@ -136,7 +135,7 @@ export default function Readhub() {
         const rAF = window.requestAnimationFrame || (func => setTimeout(func, 16));
         const frameFunc = () => {
         if (document.documentElement.scrollTop > 0) {
-            document.documentElement.scrollTop -= 50;
+            document.documentElement.scrollTop -= 80;
             rAF(frameFunc)
             }
         }
