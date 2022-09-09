@@ -2,11 +2,7 @@
 
 ## 📦 前置条件
 
-<<<<<<< HEAD
 1. 熟悉 [React](https://beta.reactjs.org/learn) 🤔
-=======
-1. 熟悉 [React](https://beta.reactjs.org/learn)  🤔
->>>>>>> 57ba78f (ui upadte)
 2. 安装 [pnpm](https://pnpm.io/zh/installation) 依赖管理工具 🔧
 
 ## 🧑‍🚀 项目启动
