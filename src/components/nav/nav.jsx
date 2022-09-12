@@ -1,6 +1,6 @@
 import './nav.css'
 import React from 'react'
-import img1 from '/src/logo.png'
+import img1 from '../../../public/img/logo.png'
 
 export const nav = () => {
   return (
