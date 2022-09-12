@@ -120,14 +120,6 @@
     display: flex;
 }
 
-.box {
-    width: 990px;
-    height: 100vh;
-    margin: 38px auto;
-    font-family: 'PingFang SC';
-    display: flex;
-}
-
 .head {
     padding-top: 30px;
 }

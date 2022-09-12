@@ -1,4 +1,4 @@
-.left1 a {
+.left1 {
     color: #737373;
 }
 
@@ -21,18 +21,19 @@
     margin: 0 40px 0 0;
     float: left;
     text-decoration: none;
-}
-
-.hot {
-    color: #246394;
-    font-weight: 700;
-}
-
-.header:link {
     color: #737373;
 }
 
-.header:visited {
+.selected {
+    color: #246394;
+    font-weight: 700;
+    line-height: 60px;
+    margin: 0 40px 0 0;
+    float: left;
+    text-decoration: none;
+}
+
+.selected :visited {
     color: #246394;
 }
 
@@ -41,7 +42,7 @@
     font-weight: 700;
 }
 
-.hot:hover {
+.selected:hover {
     color: rgb(80, 130, 169);
     font-weight: 700;
 }

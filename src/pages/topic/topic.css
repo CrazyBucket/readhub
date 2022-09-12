@@ -1,24 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    letter-spacing: .02em;
-}
-*::selection {
-    background-color: rgb(64, 109, 145);
-    color: white;
-}
-ul {
-    list-style-type: none
-}
 
-a {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    letter-spacing: .02em;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+.box {
+    width: 990px;
+    height: 100vh;
+    margin: 38px auto;
+    font-family: 'PingFang SC';
+    display: flex;
 }

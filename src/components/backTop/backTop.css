@@ -1,9 +1,4 @@
 
-:root {
-    --content-max-width: 960px;
-    --layout-padding: calc(50vw - var(--content-max-width) / 2);
-}
-
 
 .backtop {
     content: "";

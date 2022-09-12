@@ -1,12 +1,12 @@
 import './tech.css';
 import React from 'react';
-
+import Nav from '../../components/nav/nav.jsx'
 
 export const tech = () => {
     
     return (
         <div>
-            tech
+            <Nav />
         </div >
     )
 }
