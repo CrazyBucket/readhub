@@ -129,7 +129,7 @@ export const newsList = () => {
             }
             loader={
                 <div className="center">
-                    <div class="spinner">
+                    <div className="spinner">
                         <div></div>
                         <div></div>
                         <div></div>
