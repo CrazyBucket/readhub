@@ -1,18 +1,18 @@
 import React from 'react'
-import './newsList.css'
+import './topicList.css'
 import dayjs from 'dayjs';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import classnames from 'classnames';
 
-export const newsList = () => {
-  dayjs().format();
+export const topicList = () => {
+    dayjs().format();
     const [list, setList] = useState([]);
     useEffect(() => {
         axios({
             method:'GET',
-            url:'/api',
+            url:'/api/topic',
         })
             .then(res => {
                 let newlist = [...res.data.data]
@@ -90,7 +90,7 @@ export const newsList = () => {
     //请求下一组数据
     const requestList = () => {
         setTimeout(async () => {
-            let url = '/api?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
+            let url = '/api/topic?lastCursor=' + list[list.length - 1].order + '&pageSize=10';
             axios.get(url)
                 .then(res => {
                     let newlist = [...res.data.data]
@@ -188,4 +188,4 @@ export const newsList = () => {
     </div>
   )
 }
-export default newsList
+export default topicList

@@ -27,7 +27,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://api.readhub.cn/topic",
+        target: "https://api.readhub.cn",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

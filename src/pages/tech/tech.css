@@ -1,0 +1,8 @@
+
+.box {
+    width: 990px;
+    height: 100vh;
+    margin: 38px auto;
+    font-family: 'PingFang SC';
+    display: flex;
+}
