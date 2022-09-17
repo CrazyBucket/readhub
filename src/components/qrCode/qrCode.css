@@ -1,0 +1,15 @@
+.scan {
+    margin-top: 16px;
+    font-size: 14px;
+    color: rgba(12,31,51,.8);
+}
+.qrCode {
+    background-color: #fff;
+    overflow: hidden;
+    width: 204px;
+    text-align: center;
+    box-shadow: 0 8.5px 10px 0 rgb(0 0 0 / 6%);
+    border-radius: 4px;
+    padding: 30px 0 25px;
+    height: 215px;
+}

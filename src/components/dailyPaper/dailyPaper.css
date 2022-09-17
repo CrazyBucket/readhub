@@ -1,0 +1,88 @@
+.daily {
+    padding: 40px 57px;
+    background-color: #fff;
+    box-shadow: 0 8.5px 10px 0 rgb(0 0 0 / 6%);
+    position: relative;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    max-width: 630px;
+}
+
+.daily_head {
+    width: 516px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    border: solid rgba(35,86,140,.6);
+    border-width: 1px 0;
+}
+
+.father {
+    
+    padding: 2px 0;
+    border: solid rgba(35,86,140,.75);
+    border-width: 2px 0;
+}
+
+.date {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: DIN-Medium;
+    line-height: 1.29;
+    color: #2d5a8a;
+}
+
+.week {
+    line-height: 1.34;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: DIN-Medium;
+    color: #2d5a8a;
+}
+
+.date_box {
+    display: block;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.list a {
+    text-decoration: none;
+}
+
+.list a:visited {
+    color: rgba(12,31,51,.8);
+}
+
+.daily_news:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #246394;
+}
+.daily_news {
+    font-size: 18px;
+    line-height: 1.72;
+    letter-spacing: .6px;
+    margin-bottom: 30px;
+    position: relative;
+    color: rgba(12,31,51,.8);
+    display: flex;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.daily_news::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #597490;
+    border-radius: 50%;
+    margin-right: 14px;
+    margin-top: 10px;
+}

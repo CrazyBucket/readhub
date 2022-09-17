@@ -1,0 +1,31 @@
+:root {
+    --content-max-width: 960px;
+}
+
+.body {
+    background-color: #f5f6f7;
+}
+
+.daily_content {
+    width: 990px;
+    height: 100vh;
+    margin: 38px auto;
+    display: flex;
+    position: relative;
+}
+.daily_content::before {
+    content: "";
+    position: absolute;
+    top: -38px;
+    left: -100%;
+    width: 300%;
+    height: calc(100% + 76px);
+    z-index: -1;
+}
+.right {
+    width: 300px;
+    padding-right: 82px;
+    padding-left: 18px;
+    flex: 0 0 auto;
+    margin-left: 30px;
+}

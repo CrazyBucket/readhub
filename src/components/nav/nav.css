@@ -1,25 +1,35 @@
 .left1 {
     color: #737373;
+    display: flex;
 }
 
-.logo {
-    cursor: pointer;
-    padding-top: 8px;
-    float: left;
-    margin-right: 30px;
+.logo_box {
+    display: flex;
+    align-items: flex-end;
+    margin-left: -120px;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.separate {
+    width: 1px;
+    height: 15px;
+    background-color: #3d6b99;
+    margin-left: 30px;
+    margin-right: 23px;
 }
 
 .nav {
-    height: 60px;
+    height: 80px;
     border: 1px solid rgb(241, 241, 241);
     font-family: 'PingFang SC';
     color: #737373;
+    background-color: #fff;
 }
 
 .header {
-    line-height: 60px;
+    line-height: 80px;
     margin: 0 40px 0 0;
-    float: left;
     text-decoration: none;
     color: #737373;
 }
@@ -27,9 +37,8 @@
 .selected {
     color: #246394;
     font-weight: 700;
-    line-height: 60px;
+    line-height: 80px;
     margin: 0 40px 0 0;
-    float: left;
     text-decoration: none;
 }
 
@@ -48,33 +57,44 @@
 }
 
 .container {
-    height: 60px;
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
-    text-decoration: none;
-    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .right1 {
-    position: relative;
+    display: flex;
+    align-items: center;
 }
 
+.search_box {
+    flex: 0 0 auto;
+    cursor: pointer;
+    position: relative;
+    width: 33px;
+    height: 33px;
+    margin-right: 25px;
+}
 .searchImg {
     background-image: url("https://cdn.readhub.cn/next_images/icons-d38bc976c73cdfe0268c17d76d4f52f3.png");
+    content: "";
     background-position: -80px -458px;
     width: 38px;
     height: 37px;
+    display: inline-block;
     transform: scale(.5);
-    top: 12px;
+    transform-origin: 0 0;
     position: absolute;
-    cursor: pointer;
-    right: 80px;
+    top: 8px;
+    left: 8px;
 }
 
 .login {
-    position: absolute;
-    right: 0;
-    line-height: 60px;
+    line-height: 80px;
+    margin-left: 25px;
 }
 
 .login a:hover {
