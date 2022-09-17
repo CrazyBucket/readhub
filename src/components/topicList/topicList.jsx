@@ -5,10 +5,12 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import classnames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 export const topicList = () => {
     dayjs().format();
     const [list, setList] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
         axios({
             method:'GET',
@@ -117,6 +119,9 @@ export const topicList = () => {
         }
         setList(newlist)
     }
+    const jump = (id) => {
+        navigate(`/topic/${id}`)
+    }
   return (
     <div className="left2" >        
         <InfiniteScroll
@@ -155,7 +160,9 @@ export const topicList = () => {
                     >
                         <div className="head">
                             <div className="title">
-                                <a>{item.title}</a>
+                                <a onClick={()=> {
+                                    jump(item.id)
+                                }}>{item.title}</a>
                                 <span className="time">{calculate(dayjs(item.createdAt).unix())}</span>
                             </div>
                         </div>

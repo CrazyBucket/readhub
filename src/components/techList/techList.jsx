@@ -132,9 +132,9 @@ export const techList = () => {
                             </div>
                         </div>
                         <div className="content">{item.summary}</div>
-                            <div className="bottom">
+                        <div className="bottom">
                             <div className="author">{item.siteNameDisplay}</div>
-                        <div className="time">{calculate(dayjs(item.createdAt).unix())}</div>
+                            <div className="time">{calculate(dayjs(item.createdAt).unix())}</div>
                         </div>
                     </div>
                 )
