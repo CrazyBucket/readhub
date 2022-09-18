@@ -105,3 +105,10 @@
     color: #737373;
     text-decoration: none;
 }
+
+.mask {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: .5;
+}
