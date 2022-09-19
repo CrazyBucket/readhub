@@ -1,0 +1,84 @@
+
+.content_media {
+    margin-top: 40px;
+}
+
+.content_media_nav {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: var(--color-black-90);
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.content_media_nav::before {
+    content: "";
+    display: inline-block;
+    transform: scale(.5);
+    transform-origin: 0 0;
+    position: relative;
+    top: 9px;
+    left: 3px;
+    margin-right: -7px;
+    background-image: url("../../../public/img/jingling.png");
+    background-position: -299px -458px;
+    width: 36px;
+    height: 36px;
+}
+
+.content_media_border {
+    margin-bottom: 15px;
+    border-bottom: #f1f1f1 1px solid;
+}
+
+.content_media_list {
+    margin-top: 25px;
+}
+
+.content_media_news {
+    display: flex;
+    align-content: center;
+    margin-bottom: 18px;
+    padding-left: 26px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.content_media_newsTitle a {
+    color: var(--color-black-90);
+    font-size: 16px;
+    line-height: 1.4em;
+    margin-right: 15px;
+}
+
+
+.content_media_newsTitle a:hover {
+    text-decoration: underline;
+    color: #246394;
+}
+
+.content_media_siteName {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4em;
+    color: var(--color-black-50);
+    margin-top: 3px;
+}
+
+.content_media_news::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    border: 4px solid #b2b2b2;
+    padding: 0 3px;
+    width: 0;
+    height: 6px;
+    border-radius: 50%;
+    transform: scale(.5);
+    background-color: #fff;
+}

@@ -1,0 +1,15 @@
+.content_qrcode {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+}
+
+.content_qrcode_text {
+    font-size: 14px;
+    color: rgba(0,0,0,.66);
+    line-height: 1.7;
+    margin-left: 18px;
+}

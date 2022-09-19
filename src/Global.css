@@ -21,9 +21,13 @@ a {
     vertical-align: baseline;
     letter-spacing: .02em;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
 }
 
 :root {
     --content-max-width: 960px;
+    --text-max-width: 630px;
     --layout-padding: calc(50vw - var(--content-max-width) / 2);
+    --color-black-50: rgba(0,0,0,.5);
+    --color-black-90: rgba(0,0,0,.9);
 }

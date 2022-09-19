@@ -1,0 +1,76 @@
+.content_title {
+    color: var(rgba(0,0,0,.9));
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.content_time {
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-black-50);
+    display: block;
+}
+
+.content_text {
+    max-width: var(--text-max-width);
+    font-size: 16px;
+    line-height: 32px;
+    color: #575757;
+    margin-top: 25px;
+}
+
+.content_tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    max-width: var(--text-max-width);
+}
+
+.content_tag {
+    background-color: #fff;
+    display: inline-flex;
+    padding: 0 18px;
+    align-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: rgba(0,0,0,.9);
+    border: 1px solid #c5c5c5;
+    margin: 0 10px 13px 0;
+}
+
+.content_add_btn {
+    background-image: url("../../../public/img/jingling.png");
+    background-position: -28px -498px;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    transform: scale(.5);
+    transform-origin: 0 0;
+    position: relative;
+    top: 7px;
+    margin-right: -9px;
+    margin-left: auto;
+}
+.content_tagName {
+    margin-right: 18px;
+    white-space: nowrap;
+}
+
+.content_right {
+    width: 300px;
+    padding-right: 82px;
+    padding-left: 18px;
+    flex: 0 0 auto;
+    margin-left: 30px;
+    margin-top: 8px;
+}
