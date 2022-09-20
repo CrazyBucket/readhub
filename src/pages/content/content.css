@@ -48,6 +48,11 @@
     margin: 0 10px 13px 0;
 }
 
+
+.content_subscribe {
+    color:rgba(0,0,0,.5);
+}
+
 .content_add_btn {
     background-image: url("../../../public/img/jingling.png");
     background-position: -28px -498px;
@@ -60,7 +65,13 @@
     top: 7px;
     margin-right: -9px;
     margin-left: auto;
+    
 }
+
+.content_subscribe:hover {
+    color: rgba(0,0,0,.9);
+}
+
 .content_tagName {
     margin-right: 18px;
     white-space: nowrap;

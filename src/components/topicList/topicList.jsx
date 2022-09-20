@@ -5,13 +5,11 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import classnames from 'classnames';
-import { useNavigate } from 'react-router-dom';
 import { calculate } from '../../utils/calculateTime';
 
 export const topicList = () => {
     dayjs().format();
     const [list, setList] = useState([]);
-    const navigate = useNavigate();
     useEffect(() => {
         axios({
             method:'GET',
@@ -64,7 +62,9 @@ export const topicList = () => {
         setList(newlist)
     }
     const jump = (id) => {
-        navigate(`/topic/${id}`)
+        const w = window.open('_blank')
+        let url = `/topic/${id}`
+        w.location.href = url
     }
     console.log(list)
   return (
