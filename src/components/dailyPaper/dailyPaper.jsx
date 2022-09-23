@@ -27,10 +27,10 @@ export const dailyPaper = () => {
   useEffect(() => {
       axios({
           method:'GET',
-          url:'/api/news/list?size=10&type=1&page=1',
+          url:'/api/topic',
       })
           .then(res => {
-              let newlist = res.data.data.items
+              let newlist = res.data.data
               setList(newlist)
           })
           .catch(function (error) {
@@ -52,7 +52,9 @@ export const dailyPaper = () => {
           {
             list.map((item,index) => 
               <div key={item.id}>
-                <a><li className='daily_news'>{item.title}</li></a>
+                <a onClick={()=>{
+                  window.open(`/topic/${item.id}`)
+                }}><li className='daily_news'>{item.title}</li></a>
               </div>
             )
           }
