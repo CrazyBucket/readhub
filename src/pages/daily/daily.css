@@ -9,10 +9,10 @@
 
 .daily_content {
     width: 990px;
-    height: 100vh;
     margin: 38px auto;
     display: flex;
     position: relative;
+    min-height: calc(100vh - 219px);
 }
 .daily_content::before {
     content: "";

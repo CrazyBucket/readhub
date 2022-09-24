@@ -30,7 +30,7 @@ export const dailyPaper = () => {
           url:'/api/topic',
       })
           .then(res => {
-              let newlist = res.data.data
+              let newlist = res.data.data.slice(0,10)
               setList(newlist)
           })
           .catch(function (error) {
