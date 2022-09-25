@@ -51,6 +51,7 @@ export const content = () => {
         console.log(error);
       });
   }, []);
+  console.log(company)
   return (
     <div>
       <Nav />

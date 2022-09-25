@@ -7,7 +7,7 @@ import { useState,useEffect } from 'react';
 export const dailyPaper = () => {
   function returnDate(now) {
     switch(now){
-      case 7:
+      case 0:
         return "星期天";
       case 1:
         return "星期一";

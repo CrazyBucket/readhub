@@ -11,6 +11,3 @@ export const copyright = () => {
   )
 }
 export default copyright
-
-
-
