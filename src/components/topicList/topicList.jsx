@@ -66,7 +66,6 @@ export const topicList = () => {
         let url = `/topic/${id}`
         w.location.href = url
     }
-    console.log(list)
   return (
     <div className="left2" >        
         <InfiniteScroll
