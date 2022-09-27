@@ -2,7 +2,7 @@ import './login.css';
 import React from 'react';
 import qrCode from '../../../public/img/qrcode.jpg'
 
-export const login = () => {
+const login = () => {
     
     return (
         <div className='wrap'>

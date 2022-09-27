@@ -1,7 +1,7 @@
 import React from "react";
 import "./content_qrcode.css";
 
-export const content_qrcode = () => {
+const content_qrcode = () => {
   return (
     <div className="content_qrcode">
       <div>

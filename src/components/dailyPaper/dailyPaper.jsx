@@ -4,7 +4,7 @@ import moment from 'moment'
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 
-export const dailyPaper = () => {
+const dailyPaper = () => {
   function returnDate(now) {
     switch(now){
       case 0:

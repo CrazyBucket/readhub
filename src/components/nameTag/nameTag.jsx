@@ -2,7 +2,7 @@ import React from "react";
 import "../../pages/content/content.css";
 import { subscribe } from "../../utils/subscribe";
 
-export const nameTag = (props) => {
+const nameTag = (props) => {
   const { name } = props;
   const flag = !(name.length === 0);
   return (

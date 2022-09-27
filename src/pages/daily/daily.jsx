@@ -5,7 +5,7 @@ import DailyPaper from '../../components/dailyPaper/dailyPaper';
 import QrCode from '../../components/qrCode/qrCode.jsx'
 import Copyright from '../../components/copyright/copyright';
 
-export const daily = () => {
+const daily = () => {
     
     return (
         <div className='body'>

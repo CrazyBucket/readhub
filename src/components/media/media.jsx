@@ -1,7 +1,7 @@
 import React from "react";
 import "./media.css";
 
-export const media = (props) => {
+const media = (props) => {
   const { news } = props;
   return (
     <div>

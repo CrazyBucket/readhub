@@ -5,7 +5,7 @@ import TopicList from '../../components/topicList/topicList.jsx'
 import AdBox from '../../components/adbox/adBox.jsx'
 import Backtop from '../../components/backTop/backtop';
 
-export const topic = () => {
+const topic = () => {
     
     return (
         <div>

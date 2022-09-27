@@ -1,7 +1,7 @@
 import React from 'react'
 import './qrCode.css'
 
-export const qrCode = () => {
+const qrCode = () => {
   return (
     <div className='qrCode'>
         <div>

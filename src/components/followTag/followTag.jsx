@@ -2,7 +2,7 @@ import React from "react";
 import "../../pages/content/content.css";
 import { subscribe } from "../../utils/subscribe";
 
-export const followTag = (props) => {
+const followTag = (props) => {
   const { timeline } = props;
   const flag = !(timeline.length === 0);
   return (

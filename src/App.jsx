@@ -8,7 +8,7 @@ import Content from './pages/content/content.jsx'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './Global.css'
 
-export const App = () => {
+const App = () => {
   return (
     <Routes>
         <Route path="/" element={<Navigate to="/topic"/>}></Route>

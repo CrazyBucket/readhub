@@ -2,7 +2,7 @@ import "./search.css";
 import React from "react";
 import img3 from "../../../public/img/logo.png";
 
-export const search = (props) => {
+const search = (props) => {
   const { mask, close } = props;
   return (
     <div>

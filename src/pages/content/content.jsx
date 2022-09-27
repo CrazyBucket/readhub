@@ -15,7 +15,7 @@ import NameTag from "../../components/nameTag/nameTag";
 import Tag from "../../components/tag/tag";
 import Company from "../../components/company/company";
 
-export const content = () => {
+const content = () => {
   dayjs().format();
   const { id } = useParams();
   const [list, setList] = useState([]);

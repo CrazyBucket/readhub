@@ -2,7 +2,7 @@ import React from "react";
 import "./timeline.css";
 import { returnDate, returnYear } from "../../utils/returnDate";
 
-export const timeline = (props) => {
+const timeline = (props) => {
   const { timeline } = props;
   const flag = !(timeline.length === 0);
   return (

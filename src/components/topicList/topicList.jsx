@@ -7,7 +7,7 @@ import { useState,useEffect } from 'react';
 import classnames from 'classnames';
 import { calculate } from '../../utils/calculateTime';
 
-export const topicList = () => {
+const topicList = () => {
     dayjs().format();
     const [list, setList] = useState([]);
     useEffect(() => {

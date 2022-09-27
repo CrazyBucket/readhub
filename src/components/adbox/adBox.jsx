@@ -1,7 +1,7 @@
 import './adBox.css'
 import React from 'react'
 
-export const adBox = () => {
+const adBox = () => {
   return (
     <div className="right2">
         <div className="sponsor">年度赞助商</div>

@@ -2,7 +2,7 @@ import React from "react";
 import "../../pages/content/content.css";
 import "./company.css";
 
-export const company = (props) => {
+const company = (props) => {
   const { company } = props;
   let flag = false;
   for (let i = 0; i < company.length; i++) {

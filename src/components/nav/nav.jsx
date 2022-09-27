@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 import Search from '../search/search.jsx'
 
-export const nav = () => {
+const nav = () => {
     const [mask,setMask] = useState(false)
     const close = () => {
         setMask(!mask)

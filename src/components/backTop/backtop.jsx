@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './backTop.css'
 
-export const backtop = () =>{
+const backtop = () =>{
     const [show,setShow] = useState(false)
     //监听滚动距离来决定回到顶部按钮是否显示
     window.onscroll = function scrollListen() {

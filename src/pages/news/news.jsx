@@ -6,7 +6,7 @@ import AdBox from '../../components/adbox/adBox.jsx'
 import Backtop from '../../components/backTop/backtop';
 
 
-export const news = () => {
+const news = () => {
     
     return (
         <div>
