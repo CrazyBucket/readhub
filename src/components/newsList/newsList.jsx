@@ -9,6 +9,7 @@ import { calculate } from '../../utils/calculateTime';
 const newsList = () => {
     dayjs().format();
     const [list, setList] = useState([]);
+    const id = Date.parse(new Date());
     useEffect(() => {
         axios({
             method:'GET',

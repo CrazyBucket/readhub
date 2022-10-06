@@ -1,3 +1,3 @@
-export function subscribe(){
-    window.open('/login')
+export function subscribe() {
+  window.open("/login");
 }

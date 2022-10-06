@@ -10,8 +10,20 @@ const followTag = (props) => {
       {flag ? (
         <div className="content_tag">
           <div className="content_tagName">事件追踪</div>
-          <div className="content_add_btn" onClick={()=>{subscribe()}}></div>
-          <span className="content_subscribe" onClick={()=>{subscribe()}}>订阅</span>
+          <div
+            className="content_add_btn"
+            onClick={() => {
+              subscribe();
+            }}
+          ></div>
+          <span
+            className="content_subscribe"
+            onClick={() => {
+              subscribe();
+            }}
+          >
+            订阅
+          </span>
         </div>
       ) : null}
     </>

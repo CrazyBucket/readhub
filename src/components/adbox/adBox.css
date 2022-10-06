@@ -1,80 +1,95 @@
 .sponsor {
-    color: #AFAFAF;
-    margin: 0 0 10px;
-    font-size: 16px;
-    width: 300px;
-    height: 28.6px;
+  color: #afafaf;
+  margin: 0 0 10px;
+  font-size: 16px;
+  width: 300px;
+  height: 28.6px;
 }
 
 .adBox {
-    height: 450px;
-    width: 300px;
-    top: 28.6px;
+  height: 450px;
+  width: 300px;
+  top: 28.6px;
 }
 
 .ad1 {
-    width: 140px;
-    height: 78px;
-    margin: 0 12px 12px 0;
-    z-index: 4;
-    justify-content: center;
-    align-items: center;
-    display: inline-block;
-    border: rgb(238, 238, 238) solid 1px;
-    text-align: center;
-    box-sizing: inherit;
-    cursor: pointer;
+  width: 140px;
+  height: 78px;
+  margin: 0 12px 12px 0;
+  z-index: 4;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  border: rgb(238, 238, 238) solid 1px;
+  text-align: center;
+  box-sizing: inherit;
+  cursor: pointer;
 }
 
 .ad2 {
-    width: 140px;
-    height: 78px;
-    margin: 0 0 12px;
-    z-index: 4;
-    justify-content: center;
-    align-items: center;
-    display: inline-block;
-    border: rgb(238, 238, 238) solid 1px;
-    text-align: center;
-    box-sizing: inherit;
-    cursor: pointer;
+  width: 140px;
+  height: 78px;
+  margin: 0 0 12px;
+  z-index: 4;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  border: rgb(238, 238, 238) solid 1px;
+  text-align: center;
+  box-sizing: inherit;
+  cursor: pointer;
 }
 
 .ad1:hover {
-    content: "";
-    filter: blur(0.6px);
-    z-index: 5;
-    box-shadow: 0px 20px 350px rgba(0, 0, 0, 0.1), 0px 8px 100px rgba(0, 0, 0, 0.05), 0px 3px 40px rgba(0, 0, 0, 0.04);
-    ;
+  content: "";
+  filter: blur(0.6px);
+  z-index: 5;
+  box-shadow: 0px 20px 350px rgba(0, 0, 0, 0.1),
+    0px 8px 100px rgba(0, 0, 0, 0.05), 0px 3px 40px rgba(0, 0, 0, 0.04);
 }
 
 .ad2:hover {
-    content: "";
-    filter: blur(0.6px);
-    z-index: 5;
-    box-shadow: 0px 20px 350px rgba(0, 0, 0, 0.1), 0px 8px 100px rgba(0, 0, 0, 0.05), 0px 3px 40px rgba(0, 0, 0, 0.04);
-    ;
+  content: "";
+  filter: blur(0.6px);
+  z-index: 5;
+  box-shadow: 0px 20px 350px rgba(0, 0, 0, 0.1),
+    0px 8px 100px rgba(0, 0, 0, 0.05), 0px 3px 40px rgba(0, 0, 0, 0.04);
 }
 
 .adImg {
-    width: 121px;
-    height: 75px;
-    margin-top: 1px;
+  width: 121px;
+  height: 75px;
+  margin-top: 1px;
 }
 
 .adImg2 {
-    width: 90px;
+  width: 90px;
 }
 
 .ad3 {
-    align-items: center;
-    padding: 16px;
-    color: #AFAFAF;
-    display: flex;
-    font-size: 14px;
-    border: rgb(238, 238, 238) solid 1px;
+  align-items: center;
+  padding: 16px;
+  color: #afafaf;
+  display: flex;
+  font-size: 14px;
+  border: rgb(238, 238, 238) solid 1px;
 }
 
 .adText {
-    padding-left: 25px;
+  padding-left: 25px;
+}
+
+.adShow-enter{
+  animation-name: in;
+  animation-duration: 2s;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+}
+
+.adShow-appear-done {
+    opacity: 1;
 }

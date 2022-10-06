@@ -7,7 +7,7 @@ const timeline = (props) => {
   const flag = !(timeline.length === 0);
   return (
     <div>
-      { flag ? (
+      {flag ? (
         <div className="content_timeline">
           <div className="content_timeline_nav">事件追踪</div>
           <div className="content_timeline_border"></div>
@@ -22,12 +22,15 @@ const timeline = (props) => {
                 </div>
                 <div className="content_timeline_dot"></div>
                 <div className="content_timeline_newsTitle">
-                  <a onClick={()=> {
-                        const w = window.open('_blank')
-                        let url = `/topic/${item.id}`
-                        w.location.href = url
-                    }
-                  }>{item.title}</a>
+                  <a
+                    onClick={() => {
+                      const w = window.open("_blank");
+                      let url = `/topic/${item.id}`;
+                      w.location.href = url;
+                    }}
+                  >
+                    {item.title}
+                  </a>
                 </div>
               </div>
             ))}
