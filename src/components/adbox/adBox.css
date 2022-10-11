@@ -88,6 +88,9 @@
   from {
     opacity: 0;
   }
+  50% {
+    opacity: 0;
+  }
 }
 
 .adShow-appear-done {

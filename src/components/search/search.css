@@ -50,7 +50,7 @@
   background-color: black;
   opacity: 0.5;
   animation-name: in;
-  animation-duration: 1s;
+  animation-duration: .5s;
 }
 
 @keyframes in {
